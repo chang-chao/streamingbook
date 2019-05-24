@@ -47,7 +47,7 @@ import org.joda.time.Instant;
 /**
  * Standalone executable version of Example 2-1. Can be run locally over small test data from the root repo dir via:
  *
- *   mvn compile exec:java -Dexec.mainClass=net.streamingbook.Example2_1 -Dexec.args="--inputFile=src/main/java/net/streamingbook/inputs.txt --output=output" -Pdirect-runner
+ *   mvn compile exec:java -Dexec.mainClass=net.streamingbook.Example2_1 -Dexec.args="--inputFile=src/main/java/net/streamingbook/inputs.csv --output=output" -Pdirect-runner
  *   cat output-*
  *
  * which will create and then dump one or more files in the root repo named "output-NNNNN-of-MMMMMM".
@@ -66,7 +66,7 @@ public class Example2_1 {
 
     public interface Options extends PipelineOptions {
 	@Description("Path of the file to read from")
-	@Default.String("src/main/java/net/streamingbook/inputs.txt")
+	@Default.String("src/main/java/net/streamingbook/inputs.csv")
 	String getInputFile();
 	void setInputFile(String value);
 
