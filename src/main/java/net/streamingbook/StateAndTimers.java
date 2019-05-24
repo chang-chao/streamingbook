@@ -44,8 +44,8 @@ import org.joda.time.Instant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -326,7 +326,7 @@ public class StateAndTimers {
             Visit goal = findGoal(timestamp, goals);
 
             // Attribute the goal
-            List<Visit> trail = new ArrayList<>();
+            List<Visit> trail = new LinkedList<>();
             Impression impression = attributeGoal(goal, visits, impressions, trail);
             if (impression != null) {
                 output.output(new Attribution(impression, trail, goal));
